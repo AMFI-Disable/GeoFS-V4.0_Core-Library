@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoFS-V4.0_Core-Library
 // @namespace    https://greasyfork.org/users/1594049
-// @version      0.1.0
+// @version      0.2.0
 // @description  Shared initialization and notifications for the GeoFS V4.0 ecosystem beta.
 // @author       AMFI-Disable
 // @match        https://beta.geo-fs.com/geofs.php*
@@ -16,7 +16,7 @@
     const KEY = 'GeoFSV4Core';
     if (window[KEY]) return;
     const api = {
-        version: '0.1.0',
+        version: '0.2.0',
         state: 'waiting',
         simulatorVersion: null,
         modules: new Map(),
@@ -33,6 +33,25 @@
             });
             api.modules.set(name, task);
             return task;
+        },
+        clamp(value, min, max) { return Math.min(max, Math.max(min, value)); },
+        storage: {
+            get(key, fallback = null) {
+                try { const value = localStorage.getItem(`geofs-v4:${key}`); return value === null ? fallback : JSON.parse(value); }
+                catch (_) { return fallback; }
+            },
+            set(key, value) {
+                try { localStorage.setItem(`geofs-v4:${key}`, JSON.stringify(value)); return true; }
+                catch (_) { return false; }
+            }
+        },
+        watchAircraft(callback, interval = 1000) {
+            let previous = window.geofs?.aircraft?.instance;
+            const timer = setInterval(() => {
+                const current = window.geofs?.aircraft?.instance;
+                if (current !== previous) { previous = current; callback(current); }
+            }, interval);
+            return () => clearInterval(timer);
         },
         notify(message, level = 'info') {
             const host = document.body;
