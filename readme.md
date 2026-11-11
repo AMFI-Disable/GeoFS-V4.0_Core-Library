@@ -1,21 +1,7 @@
 # GeoFS-V4.0_Core-Library
 
-![Version](https://img.shields.io/badge/Version-v0.2.0-3b82f6?style=flat-square)
+Restores the V3.9 startup status, notifications, shared HUD helpers, and aircraft registry under the V4 readiness framework. Aircraft registry data is inherited from V3.9 and has not been validated against every V4 aircraft.
 
-The first experimental foundation for the GeoFS-V4.0 ecosystem. It waits for a GeoFS 4 aircraft, exposes a shared initialization API, and provides temporary notification banners. It does not modify aircraft controls or flight physics.
-
-## Installation
-
-Install the userscript with a userscript manager, then reload GeoFS 4.0 Beta. This early release targets the beta and the main GeoFS site, and activates only when GeoFS reports major version 4. It is not a replacement for the V3.9 Core Library.
-
-## API
-
-`window.GeoFSV4Core` exposes `version`, `state`, `simulatorVersion`, `onReady(callback)`, `initialize(name, callback)`, and `notify(message, level)`, `clamp(value, min, max)`, `storage`, and `watchAircraft(callback)`. Initialization is deduplicated by module name; errors are reported and propagated. Startup waits up to 60 seconds. This API is experimental and may change before 1.0.
-
-## Validation
-
-Run `node --check core-library_standalone.user.js` and `node --test tests/*.test.js`. Live validation on the GeoFS beta is still required.
-
-## License
+Version 0.3.0 is experimental and needs live V4 validation. Install with a userscript manager and reload GeoFS V4.
 
 [MIT](license) · © 2026 AMFI-Disable
