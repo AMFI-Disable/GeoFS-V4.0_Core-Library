@@ -588,4 +588,42 @@ window.AIRCRAFT_DATA = {
     "5486": { "name": "Aviat A-1B Husky", "maxFlaps": 3, "hasGear": false, "hasSpoilers": false, "oew": 531, "mtow": 907, "maxFuel": 190 },
 
 };
+
+window.getAircraftProfile = function(ac) {
+    if (!ac) return null;
+    const acId = String(ac.id ?? ac.aircraftRecord?.id ?? '');
+    
+    // 1. Direct hit in master registry
+    if (window.AIRCRAFT_DATA && window.AIRCRAFT_DATA[acId]) {
+        return Object.assign({ id: acId }, window.AIRCRAFT_DATA[acId]);
+    }
+    
+    // 2. Query GeoFS runtime catalog (geofs.aircraftList)
+    const catalogEntry = window.geofs?.aircraftList?.[acId] || ac.aircraftRecord;
+    const catalogName = catalogEntry?.name || ac.definition?.name || ac.definition?.externalName;
+    
+    // 3. Dynamic synthesis from physics definition
+    const def = ac.definition || {};
+    const mass = Number(def.mass || ac.setup?.mass || 1200);
+    const maxThrust = Number(def.maxThrust || 0);
+    const hasGear = def.hasGear !== undefined ? !def.hasGear : (def.gearPositions?.length > 0 || ac.parts?.gear !== undefined);
+    const hasSpoilers = def.hasAirbrakes !== undefined ? !def.hasAirbrakes : (ac.parts?.airbrakes !== undefined || ac.parts?.spoilers !== undefined);
+    
+    const estimatedOew = Math.round(mass * 0.55);
+    const estimatedMtow = Math.round(mass * 1.25);
+    const estimatedFuel = Math.round(mass * 0.35);
+
+    return {
+        id: acId,
+        name: catalogName || (acId ? `Aircraft ${acId}` : "Current Aircraft"),
+        maxFlaps: def.flapsSteps || (def.flapsPositions ? def.flapsPositions.length - 1 : 0),
+        hasGear,
+        hasSpoilers,
+        oew: estimatedOew,
+        mtow: estimatedMtow,
+        maxFuel: estimatedFuel,
+        isDynamic: true
+    };
+};
+
 }).catch(() => {});
