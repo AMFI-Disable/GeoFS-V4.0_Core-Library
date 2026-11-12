@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoFS-V4.0_Core-Library
 // @namespace    https://greasyfork.org/users/1594049
-// @version      0.3.0
+// @version      0.3.1
 // @description  Shared initialization and notifications for the GeoFS V4.0 ecosystem beta.
 // @author       AMFI-Disable
 // @icon         https://www.geo-fs.com/images/icons/favicon.ico
@@ -17,7 +17,7 @@
     const KEY = 'GeoFSV4Core';
     if (window[KEY]) return;
     const api = {
-        version: '0.3.0',
+        version: '0.3.1',
         state: 'waiting',
         simulatorVersion: null,
         modules: new Map(),

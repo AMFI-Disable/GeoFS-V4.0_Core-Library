@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - V4 compatibility fixes
+## [0.3.1] - V4 compatibility fixes
 
 - Corrects several GeoFS V4 aircraft IDs and removes unverified mappings; remaining aircraft specifications are provisional.
 
