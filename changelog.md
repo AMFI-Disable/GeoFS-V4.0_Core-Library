@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased - V4 compatibility fixes
+
+- Corrects several GeoFS V4 aircraft IDs and removes unverified mappings; remaining aircraft specifications are provisional.
+
 ## [0.3.0] - V3.9 Foundation Compatibility
 
 - Restores the V3.9 startup status, notifications, shared HUD helpers, and aircraft registry under the V4 readiness framework. Aircraft registry data is inherited from V3.9 and has not been validated against every V4 aircraft.

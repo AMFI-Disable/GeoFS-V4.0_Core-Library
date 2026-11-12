@@ -524,7 +524,7 @@ window.GeoFSV4Core?.initialize('V4-Shared-Foundation', () => {
  * GeoFS-V4.0 Aircraft Technical Registry
  * 
  * Master data source for physical modeling across the ecosystem.
- * Contains validated OEW (Operating Empty Weight), MTOW (Maximum Takeoff Weight), 
+ * Contains provisional OEW (Operating Empty Weight), MTOW (Maximum Takeoff Weight),
  * and system capabilities for every core GeoFS aircraft.
  */
 window.AIRCRAFT_DATA = {
@@ -545,10 +545,11 @@ window.AIRCRAFT_DATA = {
     "15": { "name": "Lockheed P-38 Lightning F-5B", "maxFlaps": 3, "hasGear": true, "hasSpoilers": false, "oew": 5800, "mtow": 9800, "maxFuel": 1100 },
     "16": { "name": "Douglas DC-3", "maxFlaps": 3, "hasGear": true, "hasSpoilers": false, "oew": 7650, "mtow": 11430, "maxFuel": 1800 },
     "18": { "name": "Sukhoi Su-35", "maxFlaps": 2, "hasGear": true, "hasSpoilers": true, "oew": 18400, "mtow": 34500, "maxFuel": 11500 },
-    "19": { "name": "Concorde", "maxFlaps": 0, "hasGear": true, "hasSpoilers": false, "oew": 78700, "mtow": 185000, "maxFuel": 95600 },
-    "20": { "name": "Zlin Z-50", "maxFlaps": 0, "hasGear": false, "hasSpoilers": false, "oew": 570, "mtow": 840, "maxFuel": 45 },
-    "21": { "name": "Piper PA-28 161 Warrior II", "maxFlaps": 3, "hasGear": false, "hasSpoilers": false, "oew": 612, "mtow": 1107, "maxFuel": 145 },
-    "22": { "name": "Boeing 737-800", "maxFlaps": 8, "hasGear": true, "hasSpoilers": true, "oew": 41140, "mtow": 79010, "maxFuel": 20816 },
+    "20": { "name": "Concorde", "maxFlaps": 0, "hasGear": true, "hasSpoilers": false, "oew": 78700, "mtow": 185000, "maxFuel": 95600 },
+
+    "22": { "name": "Cessna 152", "maxFlaps": 3, "hasGear": false, "hasSpoilers": false },
+    "23": { "name": "Piper PA-28 161 Warrior II", "maxFlaps": 3, "hasGear": false, "hasSpoilers": false, "oew": 612, "mtow": 1107, "maxFuel": 145 },
+
     "24": { "name": "Airbus A350-900", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 142400, "mtow": 280000, "maxFuel": 112600 },
     "25": { "name": "Boeing 777-300ER", "maxFlaps": 6, "hasGear": true, "hasSpoilers": true, "oew": 167800, "mtow": 351500, "maxFuel": 145538 },
     "27": { "name": "Boeing F/A-18F Super Hornet", "maxFlaps": 3, "hasGear": true, "hasSpoilers": true, "oew": 14552, "mtow": 29937, "maxFuel": 6200 },
@@ -556,10 +557,9 @@ window.AIRCRAFT_DATA = {
     "29": { "name": "Dassault Rafale", "maxFlaps": 0, "hasGear": true, "hasSpoilers": false, "oew": 10300, "mtow": 24500, "maxFuel": 4700 },
     "31": { "name": "Potez 25", "maxFlaps": 0, "hasGear": false, "hasSpoilers": false, "oew": 1490, "mtow": 2558, "maxFuel": 250 },
     "32": { "name": "Northrop T-38 Talon", "maxFlaps": 2, "hasGear": true, "hasSpoilers": true, "oew": 3270, "mtow": 5670, "maxFuel": 1800 },
-    "240": { "name": "Boeing 777-200ER", "maxFlaps": 6, "hasGear": true, "hasSpoilers": true, "oew": 138100, "mtow": 297550, "maxFuel": 137460 },
+
     "242": { "name": "Airbus A321neo", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 50100, "mtow": 97000, "maxFuel": 26000 },
-    "243": { "name": "Airbus A319-100", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 40800, "mtow": 75500, "maxFuel": 18600 },
-    "244": { "name": "Airbus A320neo", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 44300, "mtow": 79000, "maxFuel": 19046 },
+
     "2844": { "name": "Falcon 9 (SpaceX)", "maxFlaps": 0, "hasGear": true, "hasSpoilers": true, "oew": 22200, "mtow": 549054, "maxFuel": 395700 },
     "2948": { "name": "North American XB-70 Valkyrie", "maxFlaps": 0, "hasGear": true, "hasSpoilers": false, "oew": 115031, "mtow": 245847, "maxFuel": 140000 },
     "2953": { "name": "Space Shuttle Atlantis (OV104)", "maxFlaps": 1, "hasGear": true, "hasSpoilers": true, "oew": 78000, "mtow": 110000, "maxFuel": 0 },
@@ -582,19 +582,10 @@ window.AIRCRAFT_DATA = {
     "5527": { "name": "Boeing 747-400", "maxFlaps": 6, "hasGear": true, "hasSpoilers": true, "oew": 183520, "mtow": 396890, "maxFuel": 173472 },
     "5551": { "name": "Comac C919-100", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 42000, "mtow": 71500, "maxFuel": 15600 },
     "5566": { "name": "Embraer E175", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 21886, "mtow": 38790, "maxFuel": 9335 },
-    "5585": { "name": "Boeing 767-300ER", "maxFlaps": 6, "hasGear": true, "hasSpoilers": true, "oew": 90010, "mtow": 186880, "maxFuel": 72900 },
-    "1013": { "name": "ATR 42-600", "maxFlaps": 4, "hasGear": true, "hasSpoilers": true, "oew": 11700, "mtow": 18600, "maxFuel": 4500 },
-    "1015": { "name": "Challenger 650", "maxFlaps": 3, "hasGear": true, "hasSpoilers": true, "oew": 12300, "mtow": 21863, "maxFuel": 9072 },
-    "1016": { "name": "CRJ900", "maxFlaps": 4, "hasGear": true, "hasSpoilers": true, "oew": 21433, "mtow": 38330, "maxFuel": 8800 },
-    "2808": { "name": "Supermarine Spitfire Mk IX", "maxFlaps": 1, "hasGear": true, "hasSpoilers": false, "oew": 2300, "mtow": 4300, "maxFuel": 380 },
-    "2843": { "name": "Airbus A321-200", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 48500, "mtow": 93500, "maxFuel": 24000 },
+
     "4402": { "name": "Boeing 777-200F", "maxFlaps": 6, "hasGear": true, "hasSpoilers": true, "oew": 144400, "mtow": 347800, "maxFuel": 145000 },
     "5229": { "name": "F-35B Lightning II", "maxFlaps": 0, "hasGear": true, "hasSpoilers": true, "oew": 14700, "mtow": 27200, "maxFuel": 6125 },
     "5486": { "name": "Aviat A-1B Husky", "maxFlaps": 3, "hasGear": false, "hasSpoilers": false, "oew": 531, "mtow": 907, "maxFuel": 190 },
-    "5642": { "name": "Tupolev Tu-144", "maxFlaps": 0, "hasGear": true, "hasSpoilers": false, "oew": 99200, "mtow": 207000, "maxFuel": 95000 },
-    "5678": { "name": "Boeing 757-200", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 58440, "mtow": 115680, "maxFuel": 34500 },
-    "5712": { "name": "McDonnell Douglas MD-11", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 117356, "mtow": 286000, "maxFuel": 116926 },
-    "5791": { "name": "Lockheed C-5M Galaxy", "maxFlaps": 5, "hasGear": true, "hasSpoilers": true, "oew": 172370, "mtow": 381000, "maxFuel": 150800 },
-    "5847": { "name": "Boeing 727-200", "maxFlaps": 8, "hasGear": true, "hasSpoilers": true, "oew": 45360, "mtow": 95000, "maxFuel": 30600 }
+
 };
 }).catch(() => {});
