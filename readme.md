@@ -5,3 +5,7 @@ Restores the V3.9 startup status, notifications, shared HUD helpers, and aircraf
 Version 0.3.1 is experimental and needs live V4 validation. Install with a userscript manager and reload GeoFS V4.
 
 [MIT](license) · © 2026 AMFI-Disable
+
+## Latest Experimental Update
+
+Provides a shared aircraft profile resolver with dynamic estimates for unregistered aircraft. This version targets GeoFS V4; in-simulator validation is pending.

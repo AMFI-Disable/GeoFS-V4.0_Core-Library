@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.2] - V4 Integration Update
+
+- Provides a shared aircraft profile resolver with dynamic estimates for unregistered aircraft.
+- Correct gear and airbrake flags in dynamically resolved profiles.
+- Live GeoFS V4 validation is pending.
+
 ## [0.3.1] - V4 compatibility fixes
 
 - Corrects several GeoFS V4 aircraft IDs and removes unverified mappings; remaining aircraft specifications are provisional.

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoFS-V4.0_Core-Library
 // @namespace    https://greasyfork.org/users/1594049
-// @version      0.3.1
+// @version      0.3.2
 // @description  Shared initialization and notifications for the GeoFS V4.0 ecosystem beta.
 // @author       AMFI-Disable
 // @icon         https://www.geo-fs.com/images/icons/favicon.ico
@@ -17,7 +17,7 @@
     const KEY = 'GeoFSV4Core';
     if (window[KEY]) return;
     const api = {
-        version: '0.3.1',
+        version: '0.3.2',
         state: 'waiting',
         simulatorVersion: null,
         modules: new Map(),
@@ -123,8 +123,8 @@ window.getAircraftProfile = function(ac) {
     const def = ac.definition || {};
     const mass = Number(def.mass || ac.setup?.mass || 1200);
     const maxThrust = Number(def.maxThrust || 0);
-    const hasGear = def.hasGear !== undefined ? !def.hasGear : (def.gearPositions?.length > 0 || ac.parts?.gear !== undefined);
-    const hasSpoilers = def.hasAirbrakes !== undefined ? !def.hasAirbrakes : (ac.parts?.airbrakes !== undefined || ac.parts?.spoilers !== undefined);
+    const hasGear = def.hasGear !== undefined ? !!def.hasGear : (def.gearPositions?.length > 0 || ac.parts?.gear !== undefined);
+    const hasSpoilers = def.hasAirbrakes !== undefined ? !!def.hasAirbrakes : (ac.parts?.airbrakes !== undefined || ac.parts?.spoilers !== undefined);
     
     const estimatedOew = Math.round(mass * 0.55);
     const estimatedMtow = Math.round(mass * 1.25);
