@@ -1,5 +1,9 @@
 # Changelog
 
+All notable changes, features, and architectural capabilities of this project are documented in this file.
+
+---
+
 ## [0.3.2] - V4 Integration Update
 
 - Provides a shared aircraft profile resolver with dynamic estimates for unregistered aircraft.
