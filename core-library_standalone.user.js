@@ -1,15 +1,123 @@
 // ==UserScript==
 // @name         GeoFS-V4.0_Core-Library
+// @name:vi           GeoFS-V4.0_Thư-Viện-Cốt-Lõi
+// @name:zh-CN        GeoFS-V4.0_核心库
+// @name:zh-TW        GeoFS-V4.0_核心庫
+// @name:ja           GeoFS-V4.0_コアライブラリ
+// @name:ko           GeoFS-V4.0_핵심-라이브러리
+// @name:fr           GeoFS-V4.0_Bibliothèque-Principale
+// @name:de           GeoFS-V4.0_Kernbibliothek
+// @name:es           GeoFS-V4.0_Biblioteca-Principal
+// @name:pt-BR        GeoFS-V4.0_Biblioteca-Central
+// @name:pt-PT        GeoFS-V4.0_Biblioteca-Central
+// @name:ru           GeoFS-V4.0_Core-Library
+// @name:ar           GeoFS-V4.0_المكتبة-الأساسية
+// @name:tr           GeoFS-V4.0_Çekirdek-Kütüphane
+// @name:id           GeoFS-V4.0_Perpustakaan-Inti
+// @name:th           GeoFS-V4.0_ห้องสมุดหลัก
+// @name:pl           GeoFS-V4.0_Biblioteka-Podstawowa
+// @name:nl           GeoFS-V4.0_Kernbibliotheek
+// @name:it           GeoFS-V4.0_Biblioteca-Principale
+// @name:sv           GeoFS-V4.0_Kärnbibliotek
+// @name:da           GeoFS-V4.0_Kernebibliotek
+// @name:fi           GeoFS-V4.0_Ydinkirjasto
+// @name:nb           GeoFS-V4.0_Kjernebibliotek
+// @name:cs           GeoFS-V4.0_Základní-Knihovna
+// @name:hu           GeoFS-V4.0_Core-Library
+// @name:ro           GeoFS-V4.0_Biblioteca-De-Bază
+// @name:uk           GeoFS-V4.0_Основна-Бібліотека
+// @name:hi           GeoFS-V4.0_कोर-लाइब्रेरी
+// @name:bn           GeoFS-V4.0_মূল-গ্রন্থাগার
+// @name:fa           GeoFS-V4.0_کتابخانه-هسته
+// @name:he           GeoFS-V4.0_ספריית-ליבה
+// @name:ms           GeoFS-V4.0_Perpustakaan-Teras
+// @name:fil          GeoFS-V4.0_Pangunahing-Aklatan
+// @name:el           GeoFS-V4.0_Βιβλιοθήκη-Πυρήνα
+// @name:hr           GeoFS-V4.0_Osnovna-Knjižnica
+// @name:sk           GeoFS-V4.0_Základná-Knižnica
+// @name:bg           GeoFS-V4.0_Основна-Библиотека
+// @name:sr           GeoFS-V4.0_Цоре-Либрари
+// @name:lt           GeoFS-V4.0_Pagrindinė-Biblioteka
+// @name:lv           GeoFS-V4.0_Galvenā-Bibliotēka
+// @name:et           GeoFS-V4.0_Põhiraamatukogu
+// @name:sl           GeoFS-V4.0_Osnovna-Knjižnica
+// @name:ca           GeoFS-V4.0_Biblioteca-Bàsica
+// @name:af           GeoFS-V4.0_Kernbiblioteek
+// @name:sw           GeoFS-V4.0_Maktaba-Ya-Msingi
+// @name:zu           GeoFS-V4.0_I-Core-Library
+// @name:mn           GeoFS-V4.0_Үндсэн-Номын-Сан
+// @name:my           GeoFS-V4.0_အခြေခံစာကြည့်တိုက်
+// @name:km           GeoFS-V4.0_បណ្ណាល័យស្នូល
+// @name:lo           GeoFS-V4.0_ຫໍສະໝຸດຫຼັກ
+// @name:ur           GeoFS-V4.0_کور-لائبریری
 // @namespace    https://greasyfork.org/users/1594049
-// @version      1.0.0
+// @version      1.0.1
 // @description  Provides shared initialization, notification, HUD, and utility functions for the GeoFS-V4.0 scripts. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:vi    GeoFS-V4.0 · Thư Viện Cốt Lõi. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:zh-CN GeoFS-V4.0 · 核心库. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:zh-TW GeoFS-V4.0 · 核心庫. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ja    GeoFS-V4.0 · コアライブラリ. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ko    GeoFS-V4.0 · 핵심 라이브러리. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:fr    GeoFS-V4.0 · Bibliothèque Principale. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:de    GeoFS-V4.0 · Kernbibliothek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:es    GeoFS-V4.0 · Biblioteca Principal. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:pt-BR GeoFS-V4.0 · Biblioteca Central. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:pt-PT GeoFS-V4.0 · Biblioteca Central. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ru    GeoFS-V4.0 · Core Library. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ar    GeoFS-V4.0 · المكتبة الأساسية. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:tr    GeoFS-V4.0 · Çekirdek Kütüphane. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:id    GeoFS-V4.0 · Perpustakaan Inti. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:th    GeoFS-V4.0 · ห้องสมุดหลัก. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:pl    GeoFS-V4.0 · Biblioteka Podstawowa. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:nl    GeoFS-V4.0 · Kernbibliotheek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:it    GeoFS-V4.0 · Biblioteca Principale. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:sv    GeoFS-V4.0 · Kärnbibliotek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:da    GeoFS-V4.0 · Kernebibliotek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:fi    GeoFS-V4.0 · Ydinkirjasto. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:nb    GeoFS-V4.0 · Kjernebibliotek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:cs    GeoFS-V4.0 · Základní Knihovna. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:hu    GeoFS-V4.0 · Core Library. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ro    GeoFS-V4.0 · Biblioteca De Bază. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:uk    GeoFS-V4.0 · Основна Бібліотека. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:hi    GeoFS-V4.0 · कोर लाइब्रेरी. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:bn    GeoFS-V4.0 · মূল গ্রন্থাগার. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:fa    GeoFS-V4.0 · کتابخانه هسته. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:he    GeoFS-V4.0 · ספריית ליבה. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ms    GeoFS-V4.0 · Perpustakaan Teras. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:fil   GeoFS-V4.0 · Pangunahing Aklatan. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:el    GeoFS-V4.0 · Βιβλιοθήκη Πυρήνα. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:hr    GeoFS-V4.0 · Osnovna Knjižnica. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:sk    GeoFS-V4.0 · Základná Knižnica. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:bg    GeoFS-V4.0 · Основна Библиотека. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:sr    GeoFS-V4.0 · Цоре Либрари. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:lt    GeoFS-V4.0 · Pagrindinė Biblioteka. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:lv    GeoFS-V4.0 · Galvenā Bibliotēka. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:et    GeoFS-V4.0 · Põhiraamatukogu. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:sl    GeoFS-V4.0 · Osnovna Knjižnica. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ca    GeoFS-V4.0 · Biblioteca Bàsica. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:af    GeoFS-V4.0 · Kernbiblioteek. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:sw    GeoFS-V4.0 · Maktaba Ya Msingi. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:zu    GeoFS-V4.0 · I Core Library. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:mn    GeoFS-V4.0 · Үндсэн Номын Сан. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:my    GeoFS-V4.0 · အခြေခံစာကြည့်တိုက်. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:km    GeoFS-V4.0 · បណ្ណាល័យស្នូល. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:lo    GeoFS-V4.0 · ຫໍສະໝຸດຫຼັກ. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
+// @description:ur    GeoFS-V4.0 · کور لائبریری. © 2026 AMFI Disable. Part of the GeoFS V4.0_Ecosystem.
 // @author       AMFI-Disable
+// @homepageURL  https://sites.google.com/view/geofs-v40-ecosystem/home
 // @icon         https://www.geo-fs.com/images/icons/favicon.ico
 // @match        https://beta.geo-fs.com/geofs.php*
 // @match        https://www.geo-fs.com/geofs.php*
 // @grant        none
 // @run-at       document-idle
 // @license      MIT
+// @copyright    2026, AMFI-Disable (https://greasyfork.org/users/1594049)
+// @compatible   chrome
+// @compatible   firefox
+// @compatible   edge
+// @compatible   safari
+// @compatible   brave
+// @compatible   opera
 // ==/UserScript==
 
 (() => {
@@ -17,7 +125,7 @@
     const KEY = 'GeoFSV4Core';
     if (window[KEY]) return;
     const api = {
-        version: '1.0.0',
+        version: '1.0.1',
         state: 'waiting',
         simulatorVersion: null,
         modules: new Map(),
@@ -27,7 +135,11 @@
         },
         async initialize(name, callback) {
             if (api.modules.has(name)) return api.modules.get(name);
-            const task = api.onReady(() => callback(api)).catch(error => {
+            const task = api.onReady(() => callback(api)).then(result => {
+                window.V40_NOTIF?.status(`GeoFS-V4.0_${name}`, 'ready');
+                return result;
+            }).catch(error => {
+                window.V40_NOTIF?.status(`GeoFS-V4.0_${name}`, 'failed');
                 console.error(`[GeoFS-V4.0] ${name} failed to initialize`, error);
                 api.notify(`${name} failed to initialize. See the console.`, 'error');
                 throw error;
@@ -77,9 +189,8 @@
         const started = Date.now();
         const check = () => {
             const sim = window.geofs;
-            if (sim && sim.version != null) {
-                const major = String(sim.version).match(/^\s*(\d+)/);
-                if (!major || Number(major[1]) !== 4) {
+            if (sim && sim.version != null && String(sim.version).trim() !== '') {
+                if (!/^(?:v)?4(?:\.\d+)*$/i.test(String(sim.version).trim())) {
                     api.state = 'unsupported';
                     reject(new Error(`Unsupported GeoFS version: ${sim.version}`));
                     return;
@@ -101,7 +212,10 @@
         };
         check();
     });
-    ready.catch(error => console.warn('[GeoFS-V4.0_Core-Library]', error.message));
+    ready.catch(error => {
+        console.warn('[GeoFS-V4.0_Core-Library]', error.message);
+        api.notify(`GeoFS V4 add-ons could not start: ${error.message}`, 'error');
+    });
 })();
 
 // V3.9 shared HUD and notification foundations, adapted to the V4 readiness lifecycle.
@@ -152,7 +266,7 @@ window.GeoFSV4Core?.initialize('V4-Shared-Foundation', () => {
     /** Startup status and independent in-flight notification banners. */
     window.V40_NOTIF = window.V40_NOTIF?._v40StartupV2 ? window.V40_NOTIF : (() => {
         document.getElementById('V40-notif-container')?.remove();
-        const modules = ['Core-Library', 'Design-System', 'Autothrottle'];
+        const modules = ['Core-Library', 'Design-System', 'Autothrottle', 'Overpowered-Engines', 'Checklist-System', 'Failure-Simulator', 'Flight-Path-Vector', 'Fuel-Simulator', 'Information-Display', 'Landing-Statistics', 'Realism-Pack'];
         const states = new Map();
         let panel, details, banners, dismissTimer, closed = false, startup = true;
         const nameOf = text => {
@@ -179,18 +293,9 @@ window.GeoFSV4Core?.initialize('V4-Shared-Foundation', () => {
         }
         function scanModules() {
             const checks = {
-                'Core-Library': () => !!window.GeoFSV4Core,
+                'Core-Library': () => window.GeoFSV4Core?.state === 'ready',
                 'Design-System': () => !!document.getElementById('geofs-design-system'),
-                'Information-Display': () => !!window.initHUDInformationDisplayPro,
-                'Checklist-System': () => !!window.initChecklistSystem,
-                'Fuel-Simulator': () => !!window.initFuelSimulatorPro,
-                'Failure-Simulator': () => !!window.initFailures,
-                'Realism-Pack': () => !!window.initRealismPackPro,
-                'Landing-Statistics': () => !!window.initLandingStats,
-                'Flight-Path-Vector': () => typeof window.howFar !== 'undefined',
-                'Autothrottle': () => !!window.geofs?.autothrottle,
                 'Overpowered-Engines': () => !!window.overpoweredEnginesSuite,
-                'Satellite-Imagery': () => String(window.geofs?.api?.imageryProvider?._resource?.url || '').includes('ibasemaps-api.arcgis.com')
             };
             for (const [name, check] of Object.entries(checks)) {
                 try { if (check() && !states.has(name)) states.set(name, 'ready'); } catch (_) {}
@@ -201,13 +306,13 @@ window.GeoFSV4Core?.initialize('V4-Shared-Foundation', () => {
             scanModules(); ensurePanel(); if (!panel) return;
             const ready = modules.filter(name => states.get(name) === 'ready');
             const failed = modules.filter(name => states.get(name) === 'failed');
-            const unknown = modules.filter(name => !states.has(name));
-            details.textContent = `${startup ? 'Starting · ' : ''}${ready.length} of ${modules.length} detected` +
-                (failed.length ? `\nFailed to start: ${failed.join(', ')}` : '') +
-                (!startup && unknown.length ? `\nNot detected (not installed, disabled, or still loading): ${unknown.join(', ')}` : '');
-            if (ready.length === modules.length && !dismissTimer) {
+            details.textContent = `${startup ? 'Starting' : 'Startup checked'} · ${ready.length} detected` +
+                (ready.length ? `\nReady: ${ready.join(', ')}` : '') +
+                (failed.length ? `\nFailed to start: ${failed.join(', ')}. See the console.` : '') +
+                (!startup ? '\nOther add-ons may be disabled, absent, or still loading.' : '');
+            if (!startup && !failed.length && !dismissTimer) {
                 dismissTimer = setTimeout(() => { if (panel) panel.remove(); closed = true; }, 2000);
-            } else if (ready.length !== modules.length && dismissTimer) {
+            } else if (failed.length && dismissTimer) {
                 clearTimeout(dismissTimer); dismissTimer = null;
             }
         }
@@ -233,12 +338,12 @@ window.GeoFSV4Core?.initialize('V4-Shared-Foundation', () => {
             show(text, type = 'info', duration = 4000) {
                 const module = nameOf(text);
                 if (module && /\bloaded\.$/i.test(text)) { states.set(module, 'ready'); render(); return; }
-                if (module && /boot failure\.$/i.test(text)) { states.set(module, 'failed'); render(); return; }
+                if (module && /boot failure\.$/i.test(text)) { this.status(`GeoFS-V4.0_${module}`, 'failed'); return; }
                 banner(text, type, duration);
             },
             info(t) { this.show(t, 'info'); }, success(t) { this.show(t, 'success'); },
             warn(t) { this.show(t, 'warn'); }, critical(t) { this.show(t, 'critical'); },
-            status(name, state) { const module = nameOf(name); if (module) { states.set(module, state); render(); } }
+            status(name, state) { const module = nameOf(name); if (module) { states.set(module, state); if (state === 'failed') closed = false; render(); } }
         };
         render();
         setTimeout(() => { startup = false; render(); }, 18000);
