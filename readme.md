@@ -1,11 +1,30 @@
 # GeoFS-V4.0_Core-Library
 
-Restores the V3.9 startup status, notifications, shared HUD helpers, and aircraft registry under the V4 readiness framework. Aircraft registry data is inherited from V3.9 and has not been validated against every V4 aircraft.
+![Version](https://img.shields.io/badge/Version-v1.0.0-3b82f6?style=flat-square)
 
-Version 0.3.1 is experimental and needs live V4 validation. Install with a userscript manager and reload GeoFS V4.
+Provides shared initialization, notification, HUD, and utility functions for the GeoFS-V4.0 scripts.
 
-[MIT](license) · © 2026 AMFI-Disable
+## Features
 
-## Latest Experimental Update
+- The **GeoFS-V4.0_Ecosystem** startup panel closes when all add-ons are detected. If any are missing or fail to start, it stays open and identifies them; select × to dismiss it. Runtime messages appear as separate temporary banners.
+- Add-ons that are not detected may be uninstalled, disabled, still loading, or unable to start.
+- Provides the shared HUD tabs and initialization error handling used by other scripts.
 
-Provides a shared aircraft profile resolver with dynamic estimates for unregistered aircraft. This version targets GeoFS V4; in-simulator validation is pending.
+## Installation
+
+1. Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/).
+2. Install or update the script from [Greasy Fork](https://greasyfork.org/en/scripts/604885).
+3. Open or reload GeoFS V4.0. The script starts automatically.
+
+The script activates only when GeoFS reports version V3.9 (including V3.9 patch releases). It waits for the version to become available and remains inactive on other versions. This library has no ecosystem dependencies.
+
+A script listed as not detected may be uninstalled, disabled, or still loading.
+
+## License
+
+[MIT](license) · © 2026 AMFI-Disable · [GeoFS-V4.0 Ecosystem](https://sites.google.com/view/geofs-v40-ecosystem/home)
+
+## Educational And Fair-Play Disclaimer
+
+> [!CAUTION]
+> This script is provided for educational, research, and testing use in authorized environments. Follow GeoFS rules and applicable platform terms.
